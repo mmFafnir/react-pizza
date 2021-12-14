@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Routes ,
   Route,
+  hashHistory,
   Link,
 } from 'react-router-dom'
 import nullStyle from  "./scss/null.scss";
