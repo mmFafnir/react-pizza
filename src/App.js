@@ -71,7 +71,7 @@ const clearBasket = () => {
 
   return (
     <div className="App">
-    <Router >
+    <Router history={hashHistory }>
       <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
       <Routes>
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />
