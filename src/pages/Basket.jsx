@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import basket from "../scss/basket.scss";
 import { Link } from 'react-router-dom';
 import {
     CSSTransition,
     TransitionGroup,
-  } from 'react-transition-group';
+} from 'react-transition-group';
+import "../scss/basket.scss";
 import MyButton from "../components/UI/Button/MyButton";
 import CartPizza  from "../components/CartPzza";
 
@@ -24,7 +24,6 @@ function Basket ({pizzaCart, deletePizzaCart, clearBasket}) {
         changeAllPrice();
     }, [pizzaCart])
 
-    
 
     const renderCartPizza = () => {
         return pizzaCart.map((item) => (
@@ -56,6 +55,7 @@ function Basket ({pizzaCart, deletePizzaCart, clearBasket}) {
                 </div>
                 <div className="basket__body">
                     {
+
                         <TransitionGroup>
                             {renderCartPizza()}
                         </TransitionGroup>

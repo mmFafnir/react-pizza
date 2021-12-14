@@ -60,7 +60,7 @@ function Pizza ({title, price, pizzaId, img, tuning, addPizzaCart, pizzaCart, lo
                 <rect x="168" y="411" rx="8" ry="8" width="100" height="28" />
             </ContentLoader>
         ) : (
-        <div className="pizza opacity">
+        <div className="pizza ">
             <div className="pizza__img">
                 <img src={ 'img/' + img + '.png'} />
             </div>

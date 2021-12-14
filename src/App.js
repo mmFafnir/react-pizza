@@ -58,8 +58,8 @@ const addPizzaCart = (obj) => {
 
 
 const deletePizzaCart = async (id) => {
+  console.log(id);
   setPizzaCart((prev) => prev.filter((item) => item.currentId !== id));
-  
 }
 
 const clearBasket = () => {
@@ -71,7 +71,7 @@ const clearBasket = () => {
 
   return (
     <div className="App">
-    <Router>
+    <Router >
       <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
       <Routes>
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />

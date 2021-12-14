@@ -30,21 +30,18 @@ function Main ({pizza, addPizzaCart, pizzaCart, isLoading}) {
 
 
     const renderPizza = () => {
+        
         const sortedPizzaType = (sortTab.toLowerCase() == 'все') ? pizza : pizza.filter(item => item.type.toLowerCase().includes(sortTab.toLowerCase()));
         const sortedPizzaFromTo = sortedPizzaType.sort((a, b) => filter(a,b));
         return (isLoading ? [...Array(8)] : sortedPizzaFromTo).map((item, index) => (
-            <CSSTransition
-                key={index} 
-                classNames="pizza"
-                timeout={500}
-            >
+
                 <Pizza 
                     addPizzaCart={addPizzaCart}
                     pizzaCart={pizzaCart}
                     loading={isLoading}
                     {...item}
                 />
-            </CSSTransition>
+  
         ))
     }
     return (
@@ -67,11 +64,11 @@ function Main ({pizza, addPizzaCart, pizzaCart, isLoading}) {
                 </div>
             </div>            
             <h2>Все пиццы</h2>
-            <TransitionGroup className="menu">
+            <div className="menu">
                 {
                     renderPizza()
                 }
-            </TransitionGroup>
+            </div>
         </main>
     )
 }

@@ -125,7 +125,7 @@
     align-items: center;  
     margin-bottom: 20px;  
     transition-duration: 0.5s;
-
+    max-height: 302px;
     &__left{
         display: flex;
         align-items: center;
@@ -202,26 +202,33 @@
         }
     }
 }
+
+
 .pizza-cart{
-  &-enter {
-    opacity: 0;
-  }
-//   &-enter-active {
-//     transform: translateX(-500px);
-//     opacity: 1;
-//     transition-duration: 0.6s;
-//     transition-timing-function: ease-in-out;
-//   }
-  &-exit {
-    opacity: 1;
-  }
-  &-exit-active {
+    &-enter {
       opacity: 0;
-    transform: translateY(900px);
-    transition-duration: 0.8s;
-    transition-timing-function: ease-in-out;
+    }
+  //   &-enter-active {
+  //     transform: translateX(-500px);
+  //     opacity: 1;
+  //     transition-duration: 0.6s;
+  //     transition-timing-function: ease-in-out;
+  //   }
+    &-exit {
+      opacity: 1;
+    }
+    &-exit-active {
+      overflow: hidden;
+      opacity: 0;
+    //   transform:scaleY(0);
+    //   transform-origin: top;
+      max-height: 0px;
+      margin: 0px;
+      padding: 0px;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
   }
-}
 
 
 @keyframes opacity {
@@ -241,10 +248,12 @@
     .pizza-cart{
         position: relative;
         flex-wrap: wrap;
-
         &__left{
             width: 100%;
             margin-bottom: 20px;
+        }
+        &__desc{
+            padding-right: 20px;
         }
         &__delete{
             position: absolute;
@@ -255,5 +264,27 @@
     .basket__footer .btn{
         padding: 10px 18px;
         font-size: 15px;
+
+    }
+    .basket__footer > div{
+        
+        flex-wrap: wrap;
+        p{
+            margin-bottom: 10px;
+        }
+        button{
+            margin-bottom: 10px;
+        }
+    }
+}
+@media (max-width: 350px) {
+    .basket-header{
+        flex-wrap: wrap;
+    }
+    .basket-clear{
+        margin-top: 10px;
+    }
+    .basket__body{
+        padding-top: 20px;
     }
 }

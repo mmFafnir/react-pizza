@@ -5,6 +5,10 @@ import pizza from "../scss/basket.scss";
 
 function CartPizza ({item, changeAllPrice, deletePizzaCart}) {
     const [quantity, setQuantity] = React.useState(1);
+    const deletePizza = () => {
+        deletePizzaCart(item.currentId)
+       
+    }
     const changeQuantity = (action) => {
         if(action == 'plus'){
             setQuantity(quantity + 1)
@@ -15,14 +19,14 @@ function CartPizza ({item, changeAllPrice, deletePizzaCart}) {
 
     useEffect(() => {
         item.quantity = quantity;
-        setQuantity(item.quantity)
+        setQuantity(item.quantity);
         changeAllPrice();
     }, [quantity])
     return (
-        <div className="pizza-cart opacity">
+        <div className="pizza-cart opacity ">
             <div className="pizza-cart__left">
                 <div className="pizza-cart__img">
-                    <img src={'img/' + item.img + '.png'}/>
+                    <img src={'https://mmfafnir.github.io/react-pizza/img/' + item.img + '.png'}/>
                 </div>
                 <div className="pizza-cart__desc">
                     <h3>{item.title}</h3>
@@ -38,7 +42,7 @@ function CartPizza ({item, changeAllPrice, deletePizzaCart}) {
                 <MyButton click={() => changeQuantity('minus')}><span className="minus">-</span></MyButton>
             </div>
             <p className="pizza-cart__price">{item.price * item.quantity} ₽ </p>
-            <button onClick={() => deletePizzaCart(item.currentId)} className="pizza-cart__delete">+</button>
+            <button onClick={deletePizza} className="pizza-cart__delete">+</button>
         </div>
     )
 }
