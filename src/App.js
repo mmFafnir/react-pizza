@@ -72,9 +72,9 @@ const clearBasket = () => {
   return (
     // basename={process.env.PUBLIC_URL}
     <div className="App">
-    <Router >
+    <Router basename={process.env.PUBLIC_URL}>
       <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
-      <Routes basename={process.env.PUBLIC_URL}>
+      <Routes >
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />
 
         <Route path='/basket' 
