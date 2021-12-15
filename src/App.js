@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Routes ,
   Route,
-  hashHistory,
   Link,
 } from 'react-router-dom'
 import nullStyle from  "./scss/null.scss";
@@ -72,7 +71,7 @@ const clearBasket = () => {
 
   return (
     <div className="App">
-    <Router history={hashHistory }>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
       <Routes>
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />
