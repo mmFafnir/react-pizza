@@ -74,7 +74,7 @@ const clearBasket = () => {
     <div className="App">
     <Router >
       <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
-      <Routes>
+      <Routes basename={process.env.PUBLIC_URL}>
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />
 
         <Route path='/basket' 

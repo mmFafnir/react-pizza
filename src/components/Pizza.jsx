@@ -62,7 +62,7 @@ function Pizza ({title, price, pizzaId, img, tuning, addPizzaCart, pizzaCart, lo
         ) : (
         <div className="pizza ">
             <div className="pizza__img">
-                <img src={ 'img/' + img + '.png'} />
+                <img src={ 'https://mmfafnir.github.io/react-pizza/img/' + img + '.png'} />
             </div>
             <h3>{title}</h3>
             <form className="pizza-option" ref={formRef} onSubmit={collectObjPizza}>
