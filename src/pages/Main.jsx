@@ -36,6 +36,7 @@ function Main ({pizza, addPizzaCart, pizzaCart, isLoading}) {
         return (isLoading ? [...Array(8)] : sortedPizzaFromTo).map((item, index) => (
 
                 <Pizza 
+                    key={index}
                     addPizzaCart={addPizzaCart}
                     pizzaCart={pizzaCart}
                     loading={isLoading}
@@ -49,11 +50,11 @@ function Main ({pizza, addPizzaCart, pizzaCart, isLoading}) {
             <div className="filter">
                 <div className="filter__btns">
                     <FilterBtn active={true} setSortTab={setSortTab} name={'ingredients'} option={'all'}>Все</FilterBtn>
-                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'meat'}>Мясные</FilterBtn>
+                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'meat'}>Мясная</FilterBtn>
                     <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'vegetarian'}>Вегетарианская</FilterBtn>
                     <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'grill'}>Гриль</FilterBtn>
-                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'sharp'}>Острые</FilterBtn>
-                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'closed'}>Закрытые</FilterBtn>
+                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'sharp'}>Острая</FilterBtn>
+                    <FilterBtn active={false} setSortTab={setSortTab} name={'ingredients'} option={'closed'}>Закрытая</FilterBtn>
                 </div>
                 <div className="filter-select">
                 <Select

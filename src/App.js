@@ -41,7 +41,7 @@ const changePriceHeader = () => {
 }
 
 React.useEffect(() => {
-  setTotalPrice(changePriceHeader()); 
+  setTotalPrice(changePriceHeader());
   setAllQuantity(pizzaCart.length)
 
 }, [allQuantity, pizzaCart])
@@ -72,15 +72,15 @@ const clearBasket = () => {
   return (
     // basename={process.env.PUBLIC_URL}
     <div className="App">
-    <Router basename={process.env.PUBLIC_URL}>
-      <Header allQuantity={allQuantity} totalPrice={totalPrice}/>  
+    <Router >
+      <Header allQuantity={allQuantity} totalPrice={totalPrice}/>
       <Routes >
         <Route path='/' element={<Main pizza={pizza} pizzaCart={pizzaCart} addPizzaCart={addPizzaCart} isLoading={isLoading} />} />
 
-        <Route path='/basket' 
+        <Route path='/basket'
         element={
          <Basket pizzaCart={pizzaCart} deletePizzaCart={deletePizzaCart} clearBasket={clearBasket}/>
-        } 
+        }
 
         />
       </Routes>

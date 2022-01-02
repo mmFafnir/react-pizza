@@ -27,7 +27,7 @@ const Select = ({name, values, sortFn, ...props}) => {
                     values.map((value, index) => (
                         <div className="select-body__item" key={index}>
                             <input onClick={() => clickOption(value)}  name={name} type="radio" value={value.eng} id={value.eng}/>
-                            <label for={value.eng}>{value.ru}</label>
+                            <label htmlFor={value.eng}>{value.ru}</label>
                         </div>   
                     ))
                 }
